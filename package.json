@@ -1,0 +1,20 @@
+{
+  "name": "composed-value-registry",
+  "version": "1.0.0",
+  "description": "Decouple numbers with multiple modifiers",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wol-soft/ComposedValueRegistry.git"
+  },
+  "keywords": [
+    "idle",
+    "incremental",
+    "numbers"
+  ],
+  "author": "WOL-Soft",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wol-soft/ComposedValueRegistry/issues"
+  },
+  "homepage": "https://github.com/wol-soft/ComposedValueRegistry#readme"
+}
