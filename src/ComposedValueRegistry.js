@@ -101,6 +101,8 @@ class ComposedValue {
 
         delete this._cache.modifierValue[modifierKey];
 
+        this.getValue();
+
         return this;
     };
 
@@ -112,6 +114,8 @@ class ComposedValue {
     recalculate () {
         this._cache.composedValue = null;
         this._cache.modifierValue = {};
+
+        this.getValue();
 
         return this;
     };
@@ -147,6 +151,8 @@ class ComposedValue {
 
         this._cache.composedValue = null;
 
+        this.getValue();
+
         return this;
     };
 
@@ -164,6 +170,8 @@ class ComposedValue {
         delete this._cache.modifierValue[modifierKey];
 
         this._cache.composedValue = null;
+
+        this.getValue();
 
         return this;
     };
@@ -223,8 +231,8 @@ class ComposedValue {
     debug () {
         console.log(`Debug for ComposedValue ${this._key}. Calculated value`, this.getValue());
         console.log('Cached modifiers:');
-        $.each(this._cache.modifierValue, (key, value) => console.log('  - ' + key, value));
+        Object.entries(this._cache.modifierValue).forEach((entry) => console.log('  - ' + entry[0], entry[1]));
         console.log('Uncached modifiers:');
-        $.each(this._uncachedModifier, (key, value) => console.log('  - ' + key, value()));
+        Object.entries(this._uncachedModifier).forEach((entry) => console.log('  - ' + entry[0], entry[1]()));
     }
 }
